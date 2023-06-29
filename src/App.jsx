@@ -24,23 +24,36 @@ const App = () => {
     }
   };
 
+  const clearWeather = () => {
+    setWeather({});
+    setCitySearch('');
+    setCityFound(true);
+  };
+
   useEffect(() => {
     getWeather();
-  }, []);
+  },[]);
 
   return (
     <>
-      <h1 className='mainTitle'>React Weather API</h1>
+      <h1 className="mainTitle">Find the weather in your city</h1>
       <CitySearch citySearch={citySearch} setCitySearch={setCitySearch} getWeather={getWeather} />
-      {!cityFound && (
-        <div className="no-data-found">No data found for the specified city.</div>
-      )}
+      {!cityFound && <div className="no-data-found">No data found for the specified city.</div>}
       {weather.main && (
         <div className="weather-data">
           <h2>{weather.name}</h2>
+          <div className="weather-icon">
+            <img
+              src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`}
+              alt={weather.weather[0].description}
+            />
+          </div>
           <p>Temperature: {weather.main.temp}°C</p>
           <p>Humidity: {weather.main.humidity}%</p>
           <p>Description: {weather.weather[0].description}</p>
+          <button className="clearBtn" onClick={clearWeather}>
+            Clear
+          </button>
         </div>
       )}
     </>
@@ -48,3 +61,4 @@ const App = () => {
 };
 
 export default App;
+
