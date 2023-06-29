@@ -1,38 +1,107 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.weather-data {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 30px;
+  margin-top: 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.weather-data h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.weather-data p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.search {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+.searchBox {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.searchBtn {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.searchBtn:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .weather-data {
+    padding: 20px;
+  }
+
+  .weather-data h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .weather-data p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .searchBox {
+    max-width: 250px;
   }
 }
